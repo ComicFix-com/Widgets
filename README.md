@@ -94,4 +94,4 @@ You can download the required files for the widgets from the repository. Simply 
 
 - **Clone the Repository**:
   ```bash
-  git clone https://github.com/your-username/your-repository.git
+  git clone https://github.com/muhammedadnanv/Widgets.git
