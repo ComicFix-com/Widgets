@@ -1,8 +1,8 @@
 ---------
-use the moulde for whatsappp '<script type="module">
+use the moulde for whatsappp    //'<script type="module">
         import { createWhatsAppWidget, injectStyles, loadExternalLibraries } from './WhatsAppWidget.js';
 
-        // Load necessary external libraries
+        Load necessary external libraries
         loadExternalLibraries();
 
         // Inject required styles for the widget
