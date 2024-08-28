@@ -14,3 +14,16 @@ use the moulde for whatsappp    //'<script type="module">
 ----------------------------------------------------------------------------------------------------------------------------
 Use the Instagram moulde like ![image](https://github.com/user-attachments/assets/82ebf51e-b9c2-406a-937e-523fe3143836)
 ---------------------------------------------------------------------------------------------------------------------------
+use TwitterWidget moudle 
+<script type="module">
+        import { createTwitterWidget, injectStyles, loadExternalLibraries } from './TwitterWidget.js';
+
+        // Load necessary external libraries
+        loadExternalLibraries();
+
+        // Inject required styles for the widget
+        injectStyles();
+
+        // Create the Twitter widget with your Twitter handle
+        createTwitterWidget('yourTwitterHandle'); // Replace with your Twitter handle
+    </script>
