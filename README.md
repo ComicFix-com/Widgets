@@ -35,7 +35,7 @@ To add an Instagram widget, follow these steps:
 1. 
 
    
-    ![Instagram Widget](https://github.com/user-attachments/assets/82ebf51e-b9c2-406a-937e-523fe3143836)
+   (https://github.com/user-attachments/assets/82ebf51e-b9c2-406a-937e-523fe3143836)
    
 
 2. **Customization**: Replace the link with your actual image or a link to your Instagram content.
