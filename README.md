@@ -32,11 +32,11 @@ To integrate the WhatsApp widget into your website, follow these steps:
 
 To add an Instagram widget, follow these steps:
 
-1. **Insert the Instagram Image**: Use the following markdown to include an image or your Instagram feed.
+1. 
 
-    ```markdown
+   
     ![Instagram Widget](https://github.com/user-attachments/assets/82ebf51e-b9c2-406a-937e-523fe3143836)
-    ```
+   
 
 2. **Customization**: Replace the link with your actual image or a link to your Instagram content.
 
