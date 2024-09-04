@@ -145,6 +145,113 @@ This `README.md` file provides essential information about the widget and how to
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+```markdown
+# Google Translate Popup Module
+
+This module provides a reusable Google Translate popup with a golden button for easy translation of web pages. The module includes all necessary HTML, CSS, and JavaScript to integrate the functionality into your project.
+
+## Features
+
+- **Golden Trigger Button:** A floating button styled in golden color that triggers the Google Translate popup.
+- **Popup Window:** A white popup window that displays Google Translate widget.
+- **Responsive Design:** The button and popup are designed to be responsive and adapt to different screen sizes.
+
+## Getting Started
+
+To use the Google Translate popup module in your project, follow these steps:
+
+### 1. Include the JavaScript Module
+
+Add the following script tag to your HTML file to include the module:
+
+```html
+<script src="path/to/googleTranslatePopup.js"></script>
+```
+
+Make sure to replace `"path/to/googleTranslatePopup.js"` with the actual path to the JavaScript file.
+
+### 2. Initialize the Popup
+
+Add the following script tag to initialize the Google Translate popup:
+
+```html
+<script>
+  // Initialize the Google Translate popup
+  initTranslatePopup();
+</script>
+```
+
+### HTML Structure
+
+The JavaScript module automatically creates the following elements in your HTML:
+
+- **Trigger Button:** A floating button at the bottom right of the page with a golden color.
+- **Popup Window:** A popup window that appears above the button when clicked, containing the Google Translate widget.
+
+### How It Works
+
+1. **Button Creation:** The module creates a button with the golden color and adds it to the bottom-right corner of the page.
+2. **Popup Creation:** A popup window is created and styled to appear above the button.
+3. **Google Translate Initialization:** The module dynamically loads the Google Translate script and initializes it.
+4. **Toggle Visibility:** Clicking the button toggles the visibility of the popup with a smooth transition.
+
+### Customization
+
+You can customize the appearance of the button and popup by modifying the JavaScript module. Here’s how:
+
+- **Button Color:** Change the `backgroundColor` property in the `createTranslatePopup` function.
+- **Popup Styling:** Adjust the `background`, `padding`, `borderRadius`, and other CSS properties in the `createTranslatePopup` function.
+
+### Example
+
+Here’s an example of how to include and initialize the module:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Translate Popup Example</title>
+</head>
+<body>
+  <!-- Your content here -->
+
+  <!-- Include the Google Translate Popup JavaScript module -->
+  <script src="path/to/googleTranslatePopup.js"></script>
+  <script>
+    // Initialize the Google Translate popup
+    initTranslatePopup();
+  </script>
+</body>
+</html>
+```
+
+### License
+
+This module is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+### Support
+
+If you encounter any issues or have questions, feel free to open an issue on the [GitHub repository](https://github.com/your-repo/google-translate-popup).
+
+```
+
+### Explanation
+
+- **Features:** Describes the key features of the module.
+- **Getting Started:** Instructions for including and initializing the module.
+- **HTML Structure:** Explains the elements created by the module.
+- **How It Works:** Provides an overview of the module's functionality.
+- **Customization:** Instructions for modifying the button and popup styles.
+- **Example:** Provides a simple example of how to integrate the module.
+- **License:** Information about the module's license.
+- **Support:** Instructions for seeking help or reporting issues.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Download the Files
 
 You can download the required files for the widgets from the repository. Simply clone the repository or download the files directly:
