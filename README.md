@@ -1,6 +1,7 @@
 # Widget Integration README
 
 This repository provides modules for integrating WhatsApp, Instagram, and Twitter widgets into your website with ease. Follow the instructions below to set up each widget using the provided modules.
+--------------------------------------
 
 ## WhatsApp Widget Integration
 
@@ -251,6 +252,60 @@ If you encounter any issues or have questions, feel free to open an issue on the
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+Donation Widget JavaScript Module
+This JavaScript module allows you to easily add a donation widget to your website that supports payments via Google Pay using UPI. The module provides a customizable donation button that can be styled and integrated with minimal effort.
+
+Features
+Easy integration with any website
+Customizable UPI ID and donation amount
+Automatically injects required CSS styles
+Responsive design for different screen sizes
+Installation
+Download the Module
+
+Download the donation-widget.js file and include it in your project's directory.
+
+Include the Script in Your HTML
+
+Add the following script tag to your HTML file, preferably before the closing </body> tag:
+
+html
+Copy code
+<script src="path/to/donation-widget.js" defer></script>
+Replace path/to/donation-widget.js with the actual path to the donation-widget.js file in your project.
+
+Usage
+Initialize the Donation Widget
+
+After including the script, call the createDonationWidget function in your JavaScript code to initialize the widget. You need to provide the UPI ID, donation amount, and optional note.
+
+Example:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Widget Example</title>
+    <script src="path/to/donation-widget.js" defer></script>
+</head>
+<body>
+    <!-- Your content here -->
+
+    <script>
+        // Initialize the donation widget with your UPI ID and amount
+        window.addEventListener('load', function() {
+            createDonationWidget('your-upi-id@upi', 500, 'Support Your Cause');
+        });
+    </script>
+</body>
+</html>
+upiId: Your Google Pay UPI ID (e.g., your-upi-id@upi).
+amount: The donation amount in INR.
+note: An optional note for the transaction (e.g., 'Support Your Cause').
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Download the Files
 
