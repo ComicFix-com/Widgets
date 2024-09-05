@@ -155,6 +155,6 @@ Clone the repository or download the files directly:
   ```
 
 For any questions or issues, please open an issue on the [GitHub repository](https://github.com/muhammedadnanv/Widgets).
-
+adnanmuhammad4393@gmail.com
 ```
 
