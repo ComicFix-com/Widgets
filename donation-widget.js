@@ -1,5 +1,5 @@
 (function() {
-    // Function to inject CSS styles into the document
+  
     function injectStyles() {
         const style = document.createElement('style');
         style.textContent = `
@@ -14,7 +14,7 @@
                 justify-content: center;
             }
 
-            /* Widget Button Styles */
+           
             .donate-widget {
                 background-color: #4285F4; /* Google Pay blue */
                 color: white;
@@ -69,7 +69,7 @@
         document.head.appendChild(style);
     }
 
-    // Function to create the donation widget
+    
     function createDonationWidget(upiId, amount, note) {
         // Validate inputs
         if (!upiId || !amount || isNaN(amount) || amount <= 0) {
@@ -77,14 +77,14 @@
             return;
         }
 
-        // Inject CSS styles
+        
         injectStyles();
 
-        // Create widget container
+      
         const container = document.createElement('div');
         container.className = 'donate-widget-container';
 
-        // Create widget button
+       
         const button = document.createElement('a');
         button.href = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=Donation&am=${encodeURIComponent(amount)}&cu=INR&tn=${encodeURIComponent(note)}`;
         button.className = 'donate-widget';
