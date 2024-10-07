@@ -297,6 +297,155 @@ Feel free to customize the widget as per your needs and integrate it into your w
 
 - Place this `README.md` file in the root directory of your project repository.
 - This documentation explains the widget functionality, provides a basic example, and offers easy-to-understand instructions for developers looking to integrate the widget.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Here’s a sample `README.md` file that developers can use to understand how to integrate the Map widget into their projects.
+
+```markdown
+# Map Widget Integration
+
+## Overview
+
+This Map Widget allows you to easily integrate a Google Map into your web projects. Customize the map's center, zoom level, and more with just a few lines of code.
+
+## Getting Started
+
+### Prerequisites
+
+- A Google Maps API key. You can obtain one by following the [Google Maps Platform documentation](https://developers.google.com/maps/gmp-get-started).
+
+### Installation
+
+1. Download the `mapWidget.js` file and include it in your project directory.
+2. Ensure you have an internet connection to load the Google Maps API.
+
+### Usage
+
+Follow the steps below to implement the Map Widget in your HTML file.
+
+#### Step 1: Create a Map Container
+
+Add a `<div>` element in your HTML where you want the map to be displayed:
+
+```html
+<div id="map"></div>
+```
+
+#### Step 2: Include the Google Maps API and Map Widget Script
+
+In the `<head>` section of your HTML file, include the Google Maps API script and the `mapWidget.js` file:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Widget Example</title>
+    <style>
+        /* Map container style */
+        #map {
+            height: 400px; /* Adjust the height as needed */
+            width: 100%;   /* Full width */
+        }
+    </style>
+</head>
+<body>
+```
+
+#### Step 3: Initialize the Widget
+
+After including the scripts, you can initialize the Map Widget in a `<script>` tag at the bottom of your `<body>` section:
+
+```html
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
+    <!-- Include the Map Widget script -->
+    <script src="path/to/mapWidget.js"></script>
+
+    <!-- Initialize the map widget -->
+    <script>
+        MapWidget({
+            selector: '#map', // The div where the map will render
+            zoom: 12,         // Custom zoom level
+            center: { lat: 40.7128, lng: -74.0060 } // Custom center (New York City)
+        });
+    </script>
+
+</body>
+</html>
+```
+
+### Customization Options
+
+You can customize the Map Widget by passing in the following options:
+
+- **selector**: The CSS selector for the map container (e.g., `#map`, `.map-container`).
+- **zoom**: Zoom level for the map (e.g., `10`, `12`, etc.).
+- **center**: The latitude and longitude coordinates to center the map (e.g., `{ lat: 40.7128, lng: -74.0060 }`).
+
+### Example
+
+Here's a complete example of how to integrate the Map Widget:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Widget Example</title>
+    <style>
+        /* Map container style */
+        #map {
+            height: 400px; /* Adjust the height */
+            width: 100%;   /* Full width */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Map Widget Demo</h2>
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
+    <!-- Include the Map Widget script -->
+    <script src="path/to/mapWidget.js"></script>
+
+    <!-- Initialize the map widget -->
+    <script>
+        MapWidget({
+            selector: '#map', // The div where the map will render
+            zoom: 12,         // Custom zoom level
+            center: { lat: 40.7128, lng: -74.0060 } // Custom center (New York City)
+        });
+    </script>
+
+</body>
+</html>
+```
+
+### License
+
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
+```
+
+### How to Use the README
+- Replace `YOUR_API_KEY` with your actual Google Maps API key.
+- Replace `path/to/mapWidget.js` with the actual path where the `mapWidget.js` file is located.
+- Developers can follow the instructions to integrate the map widget seamlessly into their projects.
+
+
+
+
+
+
+
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Download the Files
 
