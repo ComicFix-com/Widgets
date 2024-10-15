@@ -461,11 +461,31 @@ paymentSplitter.displayPaymentLinks();
 This project is licensed under the MIT License. Feel free to use and modify it as needed.
 ```
 
-### How to Use the README
-- Replace `YOUR_API_KEY` with your actual Google Maps API key.
-- Replace `path/to/mapWidget.js` with the actual path where the `mapWidget.js` file is located.
-- Developers can follow the instructions to integrate the map widget seamlessly into their projects.
+Example of Integrating of  internetCheck.js Module:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Check Example</title>
+    <script src="internetCheck.js" defer></script>
+</head>
+<body>
 
+    <h1>Internet Status Checker</h1>
+
+    <script>
+        // Listen for internet status events
+        window.addEventListener('internetStatus', function(e) {
+            console.log("Event triggered: " + e.detail);
+            // You can use this event to display notifications or perform other actions
+        });
+    </script>
+    
+</body>
+</html>
 
 
 
