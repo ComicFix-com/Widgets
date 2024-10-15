@@ -427,7 +427,35 @@ Here's a complete example of how to integrate the Map Widget:
 </body>
 </html>
 ```
+ How Developers Can Use the Module
+Developers can integrate this module into their own applications by importing it and using the class methods to split payments and generate UPI links.
 
+Here's an example usage:
+
+javascript
+Copy code
+// index.js
+const PaymentSplitter = require('./paymentSplitter');
+
+// Initialize the payment splitter with a total amount and a list of UPI IDs
+const totalAmount = 1500;
+const upiIds = ['user1@upi', 'user2@upi', 'user3@upi'];
+
+const paymentSplitter = new PaymentSplitter(totalAmount, upiIds);
+
+// Split the payment equally among participants
+const equalSplitLinks = paymentSplitter.splitEqually();
+console.log("Equal Split Links:", equalSplitLinks);
+
+// Display the generated payment links
+paymentSplitter.displayPaymentLinks();
+
+// Alternatively, split by custom ratios
+const ratios = [2, 1, 1]; // 50%, 25%, 25%
+const ratioSplitLinks = paymentSplitter.splitByRatios(ratios);
+console.log("Ratio Split Links:", ratioSplitLinks);
+paymentSplitter.displayPaymentLinks();
+//////
 ### License
 
 This project is licensed under the MIT License. Feel free to use and modify it as needed.
