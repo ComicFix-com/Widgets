@@ -1,74 +1,62 @@
-// Module for splitting payments with UPI, equally among users
-class SplitPaymentUPI {
-  constructor(totalAmount) {
-    this.totalAmount = totalAmount;
-    this.users = [];
-  }
-
-  // Add user with their UPI ID
-  addUser(name, upiId) {
-    this.users.push({ name, upiId });
-  }
-
-  // Calculate equal payments for each user
-  calculateEqualPayments() {
-    const numOfUsers = this.users.length;
-    const amountPerUser = (this.totalAmount / numOfUsers).toFixed(2); // equally split and format to 2 decimal places
-
-    return this.users.map(user => {
-      return {
-        name: user.name,
-        upiId: user.upiId,
-        amount: amountPerUser,
-        upiLink: this.generateUPILink(user.upiId, amountPerUser)
-      };
-    });
-  }
-
-  // Generate UPI payment link
-  generateUPILink(upiId, amount) {
-    const encodedUPIId = encodeURIComponent(upiId);
-    const encodedAmount = encodeURIComponent(amount);
-    const encodedMerchant = encodeURIComponent('Split Payment');
-    
-    // Return UPI deep link
-    return `upi://pay?pa=${encodedUPIId}&pn=${encodedMerchant}&am=${encodedAmount}&cu=INR`;
-  }
-
-  // Function to initiate the splitting process
-  splitEqually() {
-    if (this.users.length === 0) {
-      throw new Error("No users added to split the payment.");
+// paymentSplitter.js
+class PaymentSplitter {
+    constructor(totalAmount, upiIds = []) {
+        this.totalAmount = totalAmount;
+        this.upiIds = upiIds;
+        this.paymentLinks = [];
     }
 
-    const payments = this.calculateEqualPayments();
-    console.log("Payment details:", payments);
-    return payments;
-  }
+    // Method to add UPI IDs
+    addUpiId(upiId) {
+        this.upiIds.push(upiId);
+    }
+
+    // Method to remove UPI ID
+    removeUpiId(upiId) {
+        this.upiIds = this.upiIds.filter(id => id !== upiId);
+    }
+
+    // Method to split the total amount equally among UPI IDs
+    splitEqually() {
+        if (this.upiIds.length === 0) {
+            throw new Error("No UPI IDs available to split the payment.");
+        }
+
+        const splitAmount = (this.totalAmount / this.upiIds.length).toFixed(2);
+        this.paymentLinks = this.upiIds.map(upiId => this.generateUpiLink(upiId, splitAmount));
+        return this.paymentLinks;
+    }
+
+    // Method to split the total amount by custom ratios (e.g., 50%, 30%, 20%)
+    splitByRatios(ratios = []) {
+        if (this.upiIds.length !== ratios.length) {
+            throw new Error("UPI IDs and ratio count mismatch.");
+        }
+
+        const totalRatio = ratios.reduce((acc, val) => acc + val, 0);
+        this.paymentLinks = this.upiIds.map((upiId, index) => {
+            const share = (this.totalAmount * ratios[index] / totalRatio).toFixed(2);
+            return this.generateUpiLink(upiId, share);
+        });
+        return this.paymentLinks;
+    }
+
+    // Helper method to generate UPI payment links
+    generateUpiLink(upiId, amount) {
+        return `upi://pay?pa=${upiId}&am=${amount}&cu=INR`;
+    }
+
+    // Method to display payment links for all participants
+    displayPaymentLinks() {
+        if (this.paymentLinks.length === 0) {
+            throw new Error("No payment links available. Please split the payment first.");
+        }
+
+        this.paymentLinks.forEach((link, index) => {
+            console.log(`UPI ID: ${this.upiIds[index]}, Link: ${link}`);
+        });
+    }
 }
 
-// Example usage:
-
-// Initialize the module with the total amount to be split
-const totalAmount = 100; // Example: INR 100
-const splitPayment = new SplitPaymentUPI(totalAmount);
-
-// Add users (name, UPI ID)
-splitPayment.addUser("User1", "user1@upi");
-splitPayment.addUser("User2", "user2@upi");
-splitPayment.addUser("User3", "user3@upi");
-splitPayment.addUser("User4", "user4@upi");
-splitPayment.addUser("User5", "user5@upi");
-splitPayment.addUser("User6", "user6@upi");
-splitPayment.addUser("User7", "user7@upi");
-splitPayment.addUser("User8", "user8@upi");
-splitPayment.addUser("User9", "user9@upi");
-splitPayment.addUser("User10", "user10@upi");
-
-// Get the equal split payments and UPI links
-const paymentDetails = splitPayment.splitEqually();
-
-// Output the result
-paymentDetails.forEach(payment => {
-  console.log(`Pay ${payment.name} (${payment.upiId}) ₹${payment.amount}: ${payment.upiLink}`);
-});
+// Export the module for use in other files
+module.exports = PaymentSplitter;
